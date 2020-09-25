@@ -28,7 +28,6 @@ void dfs(int no, bool &esCiclico) {
             dfs(vizinho, esCiclico);
         }
     }                
-
     onstack[no] = false;
     toposort.push_back(no);
 }
@@ -64,14 +63,14 @@ int32_t main() {
 	while(tt--) {
 		int n, m;
 		cin>>n>>m;
-     	adj.assign(n+10, vector<int>());
+     		adj.assign(n+10, vector<int>());
     		visitado.assign(n, false);
     		onstack.assign(n, false);
-          for(int i=0; i<m; i++) {
-          	int a, b;
-          	cin>>a>>b;
-          	adj[a-1].push_back(b-1);	
-          }
+          	for(int i=0; i<m; i++) {
+          		int a, b;
+          		cin>>a>>b;
+          		adj[a-1].push_back(b-1);	
+          	}
     		bool esCiclico = false;
     		for(int no = 1; no <= n; ++no) {
         		if(!visitado[no]) {
