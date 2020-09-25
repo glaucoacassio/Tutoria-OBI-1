@@ -37,7 +37,7 @@ bool topo(int no) {
     onstack[no] = true;
     
     for(int vizinho: adj[no]) {
-    		//se ja visitou e esse vertice ja na ta pilha existe um ciclo
+    	//se ja visitou e esse vertice ja na ta pilha existe um ciclo
         if(visitado[vizinho] && onstack[vizinho]) {  
             return true;
         //se nao foi visitado e o pai nao aparece no topo
