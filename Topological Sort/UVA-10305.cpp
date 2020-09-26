@@ -41,25 +41,24 @@ int32_t main() {
 	int n, m;
 	while(cin >> n >> m && (n || m)) {
 		for(int j = 0; j <= n + 5; j++) {
-            	adj[j].clear();
-          	in[j] = 0;
+            		adj[j].clear();
+          		in[j] = 0;
         	}
         	res.clear();
-	     for(int i = 1; i <= m; i++) {
-	     	int x, y;
-	     	cin >> x >> y;
-	     	adj[x].push_back(y);
-	     	in[y]++;
+	     	for(int i = 1; i <= m; i++) {
+	     		int x, y;
+	     		cin >> x >> y;
+	     		adj[x].push_back(y);
+	     		in[y]++;
 	  	}
 	  	if(!Kahns(n)) {
 	  		cout << -1 << endl;	
 	  	} else {
 			for(int no : res) {
-		     	cout << no <<" ";
+		     		cout << no <<" ";
 			}
 	  		cout << endl;
 	 	}
 	}
   	return 0;
 }
-	     
